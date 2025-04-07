@@ -1,0 +1,21 @@
+---
+
+- hosts : all
+  become: true
+  tasks: 
+  - name: httpd
+    dnf:
+      name: httpd
+      state: absint
+
+  - name: update
+    dnf: 
+      update_cache: yes
+  
+  - name: add php
+    dnf:
+      name: php 
+      state: absent
+      
+
+
