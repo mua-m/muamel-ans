@@ -1,0 +1,12 @@
+---
+
+- hosts : all
+  become: true
+  tasks: 
+  - name: httpd
+    dnf:
+      name: httpd 
+  - name: update
+    dnf: 
+      update_cache: yes
+
